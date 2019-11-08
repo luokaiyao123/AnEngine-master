@@ -1,19 +1,12 @@
-from tool import request_tool
-from output import print_info
-from config import global_config
+import Main
 ver = "1.0"
-logo = """"""
+logo = """AnEngine {}""".format(ver)
 
 
 def main():
-    log = print_info.PrintConsole(print_info.TYPE[0])
-    # globals()['POC_Check']
-    # print(globals()['POC_Check'])
-    print("")
-    html = request_tool.get_web_html("https://baidu.com")
-    # print(html)
-    log.print_text("html",html)
-
+    print(logo)
+    # 加载主程序
+    Main.init()
 
 
 if __name__ == '__main__':

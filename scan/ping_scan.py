@@ -10,15 +10,19 @@ import platform
 
 class PingScan():
 
-    def get_os(self):
+    def __init__(self):
+        self.name = u"ping扫描"
+
+    def _get_os(self):
         return platform.system()
 
-    # def ping_scan(self, ip):
-    #     os_name =  get_os()
-    #     if os_name == "Windows":
-    #         os.system("ping -n 1" + ip)
-    #     if os_name == "Linux":
-    #         os.system("ping -c 1 " + ip)
+    def run(self):
+        os = self._get_os()
+        print(os)
+
+
+if __name__ == '__main__':
+    test = PingScan().run()
 
 
 

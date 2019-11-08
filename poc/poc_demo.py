@@ -1,5 +1,6 @@
 import requests
 from tool import request_tool
+from core import globalsetting
 
 
 class PocDemo():
@@ -30,7 +31,8 @@ class PocDemo():
         print(header)
 
 #注册全局环境变量
-globals()['POC_Check'] = PocDemo
+# globals()['POC_Check'] = PocDemo
+globalsetting.set_global(PocDemo)
 
 if __name__ == '__main__':
     poc = PocDemo()
