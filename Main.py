@@ -1,4 +1,5 @@
 from core import argparse
+from output.log import log
 
 #初始化
 
@@ -8,6 +9,9 @@ def init():
 
     #初始化漏洞列表
     init_poc()
+
+    log("Angine Start")
+
 
 def init_poc():
     print("init_poc")
