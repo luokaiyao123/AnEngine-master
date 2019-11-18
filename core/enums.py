@@ -10,3 +10,4 @@ class LOG_TYPE:
     APP = "app"
     WEB = "web"
     SYSTEM = "system"
+    print("hello")

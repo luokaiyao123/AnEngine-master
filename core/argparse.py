@@ -13,13 +13,10 @@ def main():
     parser.add_argument('--scan',type=str,dest='scan', help="scan task")
     parser.add_argument('--config',type=str,dest='config',help='set config file')
 
-
-
     args = parser.parse_args()
 
     print(len(sys.argv))
-    # print(args.version)
-    # print(args.thread)
+
     if len(sys.argv) < 2:
         # print("hello")
         # print(args)

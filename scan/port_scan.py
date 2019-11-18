@@ -2,7 +2,7 @@ import socket
 from dic import port_dic
 
 
-
+#端口扫描
 def port_scan(ip, port, timeout=5):
     try:
         socket.setdefaulttimeout(timeout)
