@@ -1,9 +1,8 @@
-import requests
 from tool import request_tool
-from core import globalsetting
+from core.vuln_base import VulnBase
 
 
-class PocDemo():
+class PocDemo(VulnBase):
 
     def __init__(self):
         pass
@@ -21,19 +20,30 @@ class PocDemo():
         }
         return info
 
-
-    def check(self,ip,port,timeout=5):
+    def _check(self):
+        ip = ""
+        port = ""
         header = request_tool.get_request_headers()
-        url = "http://{}:{}".format(ip,port)
+        url = "http://{}:{}".format(ip, port)
         # req = requests.get(url=url,header=header)
         # payload = ""
         print(url)
         print(header)
+        print(self.get_info())
 
-#注册全局环境变量
-# globals()['POC_Check'] = PocDemo
-globalsetting.set_global(PocDemo)
+
+# 注册全局环境变量
+globals()['POC_Check'] = PocDemo
+print("-----------------------poc demo1 -----------------------------")
+print(globals()['POC_Check'])
 
 if __name__ == '__main__':
-    poc = PocDemo()
-    poc.check("192.168.1.1",8080)
+    # poc = PocDemo()
+    # poc.check("192.168.1.1",8080)
+    print(globals()['POC_Check'])
+    t = globals()['POC_Check']
+    t.check(PocDemo, "192.168.1.1", 8080)
+    # globals()[]
+    # for i in globals()['POC_Check']:
+    #     print(i)
+    # i.check()

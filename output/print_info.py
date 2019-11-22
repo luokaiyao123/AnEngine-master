@@ -1,5 +1,4 @@
 from config import global_config
-from tool import time_tool
 
 TYPE = ["txt", "word", "excel"]
 

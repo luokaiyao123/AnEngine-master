@@ -20,6 +20,15 @@ class QueueList():
         self.q.put(t)
         lock.release()
 
+    def get_queue(self):
+        while not self.q.empty():
+            try:
+                self.q.get(block=True,timeout=1)
+            except:
+                pass
+
+            self.q.task_done()
+
     # 清理进程
     def clear_queue(self):
         self.q.empty()
